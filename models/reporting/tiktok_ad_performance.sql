@@ -7,6 +7,9 @@ campaign_name,
 campaign_id,
 campaign_status,
 campaign_type_default,
+CASE WHEN campaign_name !~* 'Traffic' THEN 'Campaign Type: Overall Excl. Traffic'
+    ELSE 'Campaign Type: Traffic'
+END AS campaign_type_custom,
 adgroup_name,
 adgroup_id,
 adgroup_status,
