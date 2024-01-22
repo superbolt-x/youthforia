@@ -1,1 +1,14 @@
 version: 2
+
+sources:
+  - name: reporting
+    schema: reporting
+    tables:
+      - name: facebook_ad_performance
+        identifier: youthforia_facebook_ad_performance
+
+      - name: googleads_campaign_performance
+        identifier: youthforia_googleads_campaign_performance
+
+      - name: tiktok_ad_performance
+        identifier: youthforia_tiktok_ad_performance
