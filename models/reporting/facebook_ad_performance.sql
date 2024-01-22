@@ -7,6 +7,10 @@ campaign_name,
 campaign_id,
 campaign_effective_status,
 campaign_type_default,
+CASE WHEN campaign_name !~* 'Traffic' AND campaign_name !~* 'Reactivation' THEN 'Campaign Type: Overall Excl. React & Traffic'
+    WHEN campaign_name ~* 'Traffic' THEN 'Campaign Type: Traffic'
+    WHEN campaign_name ~* 'Reactivation' THEN 'Campaign Type: Reactivation'
+END AS campaign_type_custom,
 adset_name,
 adset_id,
 adset_effective_status,
