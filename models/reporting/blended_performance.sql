@@ -6,7 +6,7 @@ SELECT 'Facebook (excl. React)' as channel, date, date_granularity,
   COALESCE(SUM(spend),0) as spend,
   COALESCE(SUM(revenue),0) as revenue,
   COALESCE(SUM(purchases),0) as purchases,
-  COALESCE(SUM(clicks),0) as clicks,
+  COALESCE(SUM(link_clicks),0) as clicks,
   COALESCE(SUM(impressions),0) as impressions
 FROM {{ source('reporting','facebook_ad_performance') }}
 WHERE campaign_name !~* 'Reactivation'
