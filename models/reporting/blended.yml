@@ -12,3 +12,9 @@ sources:
 
       - name: tiktok_ad_performance
         identifier: youthforia_tiktok_ad_performance
+
+  - name: gsheet_raw
+    schema: gsheet_raw
+    tables:
+      - name: meta_preview_links
+        identifier: meta_preview_links
