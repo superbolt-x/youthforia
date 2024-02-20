@@ -22,6 +22,7 @@ visual,
 copy,
 format_visual,
 visual_copy,
+preview_links,
 date,
 date_granularity,
 spend,
@@ -31,3 +32,4 @@ add_to_cart,
 purchases,
 revenue
 FROM {{ ref('facebook_performance_by_ad') }}
+LEFT JOIN (SELECT link as preview_links, ad_name FROM {{ source('gsheet_raw','meta_preview_links') }} USING(ad_name)
