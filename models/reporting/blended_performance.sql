@@ -50,11 +50,24 @@ GROUP BY 1,2,3
 
 UNION ALL
 
-SELECT 'TikTok' as channel, date, date_granularity,
+SELECT 'TikTok - DTC' as channel, date, date_granularity,
   COALESCE(SUM(spend),0) as spend,
   COALESCE(SUM(revenue),0) as revenue,
   COALESCE(SUM(purchases),0) as purchases,
   COALESCE(SUM(clicks),0) as clicks,
   COALESCE(SUM(impressions),0) as impressions
 FROM {{ source('reporting','tiktok_ad_performance') }}
+WHERE purchase_type = 'DTC'
+GROUP BY 1,2,3
+
+UNION ALL
+
+SELECT 'TikTok - Ulta' as channel, date, date_granularity,
+  COALESCE(SUM(spend),0) as spend,
+  COALESCE(SUM(revenue),0) as revenue,
+  COALESCE(SUM(purchases),0) as purchases,
+  COALESCE(SUM(clicks),0) as clicks,
+  COALESCE(SUM(impressions),0) as impressions
+FROM {{ source('reporting','tiktok_ad_performance') }}
+WHERE purchase_type = 'Ulta'
 GROUP BY 1,2,3
