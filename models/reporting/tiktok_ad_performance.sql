@@ -10,6 +10,9 @@ campaign_type_default,
 CASE WHEN campaign_name !~* 'Traffic' THEN 'Campaign Type: Overall Excl. Traffic'
     ELSE 'Campaign Type: Traffic'
 END AS campaign_type_custom,
+CASE WHEN campaign_name ~* 'Ulta' THEN 'Ulta'
+    WHEN campaign_name !~* 'Ulta' THEN 'DTC'
+END AS purchase_type,
 adgroup_name,
 adgroup_id,
 adgroup_status,
