@@ -28,5 +28,6 @@ impressions,
 clicks,
 complete_payment_events as purchases,
 complete_payment_value as revenue,
-web_add_to_cart_events as atc
+web_add_to_cart_events as atc,
+paid_follows
 FROM {{ ref('tiktok_performance_by_ad') }}
