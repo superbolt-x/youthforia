@@ -18,3 +18,6 @@ sources:
     tables:
       - name: meta_preview_links
         identifier: meta_preview_links
+
+      - name: meta_preview_links_automated
+        identifier: meta_preview_links_automated
