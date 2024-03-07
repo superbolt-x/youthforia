@@ -16,7 +16,7 @@ adset_id,
 adset_effective_status,
 audience,
 ad_name::VARCHAR,
-ad_id::BIGINT,
+ad_id::VARCHAR,
 ad_effective_status,
 visual,
 copy,
@@ -32,4 +32,4 @@ add_to_cart,
 purchases,
 revenue
 FROM {{ ref('facebook_performance_by_ad') }}
-LEFT JOIN (SELECT preview_link as preview_links, ad_id::BIGINT, ad_name::VARCHAR FROM {{ source('gsheet_raw','meta_preview_links_automated') }}) USING(ad_id, ad_name)
+LEFT JOIN (SELECT preview_link as preview_links, ad_id::VARCHAR, ad_name::VARCHAR FROM {{ source('gsheet_raw','meta_preview_links_automated') }}) USING(ad_id, ad_name)
