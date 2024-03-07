@@ -32,4 +32,4 @@ add_to_cart,
 purchases,
 revenue
 FROM {{ ref('facebook_performance_by_ad') }}
-LEFT JOIN (SELECT link as preview_links, ad_id FROM {{ source('gsheet_raw','meta_preview_links_automated') }}) USING(ad_id)
+LEFT JOIN (SELECT preview_link as preview_links, ad_id FROM {{ source('gsheet_raw','meta_preview_links_automated') }}) USING(ad_id)
